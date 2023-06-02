@@ -12,6 +12,16 @@ window.$echarts = echarts;
 start();
 initState();
 
+// 增加系统主题色判断
+const match = window.matchMedia("(prefers-color-scheme: dark)");
+const changeTheme = (macthes) =>
+    store.commit("SET_THEME", macthes ? "dark" : "light");
+match.addEventListener("change", (e) => {
+    changeTheme(e.matches);
+});
+
+changeTheme(match.matches);
+
 new Vue({
     router,
     store,
