@@ -1,6 +1,4 @@
 import { registerMicroApps, start } from "qiankun";
-import store from "@/store";
-import { getState } from "@/microAppState";
 
 registerMicroApps(
     [
